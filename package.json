@@ -11,22 +11,7 @@
         "Other"
     ],
     "activationEvents": [
-        "onCommand:extension.kundokuRe",
-        "onCommand:extension.kundoku1",
-        "onCommand:extension.kundoku2",
-        "onCommand:extension.kundoku3",
-        "onCommand:extension.kundoku4",
-        "onCommand:extension.kundokuJou",
-        "onCommand:extension.kundokuChu",
-        "onCommand:extension.kundokuGe",
-        "onCommand:extension.kundokuKou",
-        "onCommand:extension.kundokuOtsu",
-        "onCommand:extension.kundokuHei",
-        "onCommand:extension.kundokuTei",
-        "onCommand:extension.kundokuTen",
-        "onCommand:extension.kundokuChi",
-        "onCommand:extension.kundokuJin",
-        "onCommand:extension.kundokuTateten"
+        "*"
     ],
     "main": "./out/extension",
     "contributes": {
@@ -95,7 +80,17 @@
                 "command": "extension.kundokuTateten",
                 "title": "Kanbun: Tateten (｜)"
             }
-        ]
+        ],"colors": [
+			{
+				"id": "extension.kanbunHighlight",
+				"description": "Highlight color for Kanbun Kundoku Unicode characters",
+				"defaults": {
+					"dark": "#902E3B60",
+					"light": "#902E3B60",
+					"highContrast": "#902E3B60"
+				}
+			}
+		]
     },
     "scripts": {
         "vscode:prepublish": "npm run compile",

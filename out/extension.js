@@ -52,6 +52,48 @@ function activate(context) {
         insertText('㆐');
     });
     context.subscriptions.push(disposable);
+    let timeout = undefined;
+    const kanbunDecoration = vscode.window.createTextEditorDecorationType({
+        backgroundColor: { id: 'extension.kanbunHighlight' }
+    });
+    let activeEditor = vscode.window.activeTextEditor;
+    function updateDecorations() {
+        if (!activeEditor) {
+            return;
+        }
+        const regEx = /[\u3190-\u319f]+/g;
+        const text = activeEditor.document.getText();
+        const smallNumbers = [];
+        let match;
+        while (match = regEx.exec(text)) {
+            const startPos = activeEditor.document.positionAt(match.index);
+            const endPos = activeEditor.document.positionAt(match.index + match[0].length);
+            const decoration = { range: new vscode.Range(startPos, endPos), hoverMessage: `漢文訓読 \`${match[0]}\`` };
+            smallNumbers.push(decoration);
+        }
+        activeEditor.setDecorations(kanbunDecoration, smallNumbers);
+    }
+    function triggerUpdateDecorations() {
+        if (timeout) {
+            clearTimeout(timeout);
+            timeout = undefined;
+        }
+        timeout = setTimeout(updateDecorations, 200);
+    }
+    if (activeEditor) {
+        triggerUpdateDecorations();
+    }
+    vscode.window.onDidChangeActiveTextEditor(editor => {
+        activeEditor = editor;
+        if (editor) {
+            triggerUpdateDecorations();
+        }
+    }, null, context.subscriptions);
+    vscode.workspace.onDidChangeTextDocument(event => {
+        if (activeEditor && event.document === activeEditor.document) {
+            triggerUpdateDecorations();
+        }
+    }, null, context.subscriptions);
 }
 exports.activate = activate;
 function insertText(text) {
