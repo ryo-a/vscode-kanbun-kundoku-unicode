@@ -1,0 +1,112 @@
+{
+    "name": "kanbun-kundoku-unicode",
+    "displayName": "Kanbun Kundoku Unicode",
+    "description": "Insert Kanbun Kundoku Characters",
+    "version": "0.0.1",
+    "publisher": "ryo-a",
+    "engines": {
+        "vscode": "^1.32.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "activationEvents": [
+        "onCommand:extension.kundokuRe",
+        "onCommand:extension.kundoku1",
+        "onCommand:extension.kundoku2",
+        "onCommand:extension.kundoku3",
+        "onCommand:extension.kundoku4",
+        "onCommand:extension.kundokuJou",
+        "onCommand:extension.kundokuChu",
+        "onCommand:extension.kundokuGe",
+        "onCommand:extension.kundokuKou",
+        "onCommand:extension.kundokuOtsu",
+        "onCommand:extension.kundokuHei",
+        "onCommand:extension.kundokuTei",
+        "onCommand:extension.kundokuTen",
+        "onCommand:extension.kundokuChi",
+        "onCommand:extension.kundokuJin",
+        "onCommand:extension.kundokuTateten"
+    ],
+    "main": "./out/extension",
+    "contributes": {
+        "commands": [
+            {
+                "command": "extension.kundokuRe",
+                "title": "Kanbun: Re (レ)"
+            },
+            {
+                "command": "extension.kundoku1",
+                "title": "Kanbun: 1 (一)"
+            },
+            {
+                "command": "extension.kundoku2",
+                "title": "Kanbun: 2 (二)"
+            },
+            {
+                "command": "extension.kundoku3",
+                "title": "Kanbun: 3 (三)"
+            },
+            {
+                "command": "extension.kundoku4",
+                "title": "Kanbun: 4 (四)"
+            },
+            {
+                "command": "extension.kundokuJou",
+                "title": "Kanbun: Jou (上)"
+            },
+            {
+                "command": "extension.kundokuChu",
+                "title": "Kanbun: Chu (中)"
+            },
+            {
+                "command": "extension.kundokuGe",
+                "title": "Kanbun: Ge (下)"
+            },
+            {
+                "command": "extension.kundokuKou",
+                "title": "Kanbun: Kou (甲)"
+            },
+            {
+                "command": "extension.kundokuOtsu",
+                "title": "Kanbun: Otsu (乙)"
+            },
+            {
+                "command": "extension.kundokuHei",
+                "title": "Kanbun: Hei (丙)"
+            },
+            {
+                "command": "extension.kundokuTei",
+                "title": "Kanbun: Tei (丁)"
+            },
+            {
+                "command": "extension.kundokuTen",
+                "title": "Kanbun: Ten (天)"
+            },
+            {
+                "command": "extension.kundokuChi",
+                "title": "Kanbun: Chi (地)"
+            },
+            {
+                "command": "extension.kundokuJin",
+                "title": "Kanbun: Jin (人)"
+            },
+            {
+                "command": "extension.kundokuTateten",
+                "title": "Kanbun: Tateten (｜)"
+            }
+        ]
+    },
+    "scripts": {
+        "vscode:prepublish": "npm run compile",
+        "compile": "tsc -p ./",
+        "lint": "tslint ./src/*.ts",
+        "watch": "tsc -watch -p ./"
+    },
+    "devDependencies": {
+        "@types/node": "^6.0.40",
+        "tslint": "^5.16.0",
+        "typescript": "^3.5.1",
+        "@types/vscode": "^1.32.0"
+    }
+}
