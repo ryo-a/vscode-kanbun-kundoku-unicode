@@ -6,6 +6,13 @@ Unicode では、基本多言語面の `U+3190` ～ `U+319F` に漢文訓読に�
 
 この VS Code 拡張機能をインストールすると、 VS Code 上で漢文訓読用の記号の入力を容易に行なうことができます。また、当該 Unicode 文字列を強調して表示します。
 
+## インストール
+
+https://github.com/ryo-a/vscode-kanbun-kundoku-unicode/releases<br>
+から VSIX ファイルをダウンロードします。
+
+次に、VS Code で Extensionsを開き、上部のメニュー（`･･･`）から「VSIX からのインストール」をクリックしてファイルを読み込んでください。
+
 ## 使用方法
 
 コマンドパレット（Windows: Ctrl + Shift + P, macOS: Command + Shift + P）に `Kanbun` と入力すると、漢文訓読用の文字がサジェストされます。<br>
